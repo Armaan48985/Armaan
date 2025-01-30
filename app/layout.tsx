@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Geologica } from "next/font/google";
+import MobileWarning from "./MobileWarning";
 
 
 
@@ -25,6 +26,7 @@ export default function RootLayout({
       <body
         className={`${geologica.className} antialiased`}
       >
+         <MobileWarning />
         {children}
       </body>
     </html>
