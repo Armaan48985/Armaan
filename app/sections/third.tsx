@@ -16,9 +16,7 @@ export default function ThirdSection() {
   const glitchEffect = () => {
     setIsGlitching(true);
     const splitText = 'Work'.split('');
-    let glitchInterval;
-
-    glitchInterval = setInterval(() => {
+    const glitchInterval = setInterval(() => { // Changed let to const here
       const glitchedLetters = splitText.map((letter) =>
         Math.random() > 0.5 ? getRandomChar() : letter
       );

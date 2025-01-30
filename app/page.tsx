@@ -1,6 +1,4 @@
 'use client'
-
-import { HeroScrollDemo } from "./scrollProject";
 import FirstSection from "./sections/first";
 import FourthSection from "./sections/fourth";
 import SecondSection from "./sections/second";

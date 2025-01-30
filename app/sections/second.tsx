@@ -11,8 +11,9 @@ const SecondSection: React.FC = () => {
         </h1>
 
         <p className="text-lg max-w-[35rem] opacity-80 text-center">
-          I'm a Fullstack web Developer specializing in MERN stack, passionate about building scalable solutions and solving complex problems.
-        </p>
+  I&apos;m a Fullstack web Developer specializing in MERN stack, passionate about building scalable solutions and solving complex problems.
+</p>
+
       </div>
     </div>
   );
