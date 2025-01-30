@@ -30,7 +30,7 @@ export default function FirstSection(){
                 <h1 className="text-[8rem] opacity-80 font-semibold uppercase leading-[1.1]">
                     Armaan Raj <br /> Thakur
                 </h1>
-                <p className="mt-4 text-xl opacity-70 ml-8">~Web Developer</p>
+                <p className="mt-4 text-xl opacity-80 ml-8">~Web Developer</p>
             </div>
 
             {/* Buttons - Top right corner */}
