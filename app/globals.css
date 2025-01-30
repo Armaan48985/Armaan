@@ -5,12 +5,18 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --scrollbar-bg: #2c2c2c;
+  --scrollbar-thumb: #5c5c5c;
+  --scrollbar-thumb-hover: #888888;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --scrollbar-bg: #121212;
+    --scrollbar-thumb: #3c3c3c;
+    --scrollbar-thumb-hover: #5c5c5c;
   }
 }
 
@@ -23,5 +29,125 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+.geologica {
+  font-family: var(--font-geologica);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 12px; /* Adjust the width of the scrollbar */
+  height: 12px; /* Adjust the height for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-bg); /* Track background */
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb); /* Thumb color */
+  border-radius: 6px; /* Rounded edges */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover); /* Thumb color on hover */
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin; /* Thin scrollbar */
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-bg); /* Thumb and track colors */
+}
+
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-in-out;
+}
+
+.project.animate-slide-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.text-wrapper {
+  width: 100%; /* Adjust width as needed */
+  overflow: hidden; /* Hide overflow to keep the text inside the container */
+  display: flex;
+  justify-content: center; /* Center the text horizontally */
+}
+
+.animated-text {
+  display: inline-block;
+  white-space: nowrap; /* Prevent the text from wrapping */
+  font-size: 2rem; /* Adjust text size as needed */
+  animation: moveText 10s linear infinite; /* Animation for moving the text */
+}
+
+@keyframes moveText {
+  0% {
+    transform: translateX(100%); /* Start from the right */
+  }
+  100% {
+    transform: translateX(-100%); /* Move to the left */
+  }
+}
+
+
+@keyframes glitch {
+  0% { transform: translate(0); opacity: 1; }
+  20% { transform: translate(-2px, 2px); opacity: 0.8; }
+  40% { transform: translate(2px, -2px); opacity: 1; }
+  60% { transform: translate(-2px, -2px); opacity: 0.8; }
+  80% { transform: translate(2px, 2px); opacity: 1; }
+  100% { transform: translate(0); opacity: 1; }
+}
+
+.glitch-text {
+  position: relative;
+  display: inline-block;
+  color: white;
+  animation: glitch 0.2s infinite alternate-reverse;
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: -2px 0 red, 2px 0 blue;
+    transform: translateX(-3px);
+  }
+  20% {
+    text-shadow: -3px 0 red, 3px 0 blue;
+    transform: translateX(3px);
+  }
+  40% {
+    text-shadow: 2px 0 red, -2px 0 blue;
+    transform: translateX(-2px);
+  }
+  60% {
+    text-shadow: -1px 0 red, 1px 0 blue;
+    transform: translateX(2px);
+  }
+  80% {
+    text-shadow: 2px 0 red, -2px 0 blue;
+    transform: translateX(-2px);
+  }
+  100% {
+    text-shadow: -2px 0 red, 2px 0 blue;
+    transform: translateX(0);
   }
 }

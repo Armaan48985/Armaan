@@ -12,6 +12,18 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        roboto: ['var(--font-roboto)', 'sans-serif'], // Fallback to sans-serif
+      },
+      animation: {
+        'slide-up': 'slideUp 0.6s ease-out forwards',
+      },
+      keyframes: {
+        slideUp: {
+          '0%': { opacity: '0', transform: 'translateY(30px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+      },      
     },
   },
   plugins: [],
