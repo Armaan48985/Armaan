@@ -41,7 +41,7 @@ export default function ThirdSection() {
     }, 4000);
 
     return () => clearInterval(glitchInterval); // Cleanup interval on component unmount
-  }, []);
+  });
 
   return (
     <div className="text-center mt-16" id="thirdSection">

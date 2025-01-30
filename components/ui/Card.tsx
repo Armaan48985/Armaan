@@ -10,7 +10,6 @@ interface CardProps {
 export const Card = ({
   rotate,
   scale,
-  translate,
   children,
 }: CardProps) => {
   return (

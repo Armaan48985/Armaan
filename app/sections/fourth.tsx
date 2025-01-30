@@ -5,14 +5,20 @@ import { FaArrowUp, FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 const FourthSection = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<{
+    name: string;
+    email: string;
+    message: string;
+  }>({
     name: "",
     email: "",
     message: "",
   });
-  const [submissionStatus, setSubmissionStatus] = useState("");
+  const [submissionStatus, setSubmissionStatus] = useState<string>("");
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -54,7 +60,6 @@ const FourthSection = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
 
   return (
     <div className="bg-slate-50 min-h-[82vh] flex-center flex-col">
@@ -100,7 +105,7 @@ const FourthSection = () => {
                       <textarea
                         id={field}
                         name={field}
-                        value={formData[field]}
+                        value={formData[field as keyof typeof formData]}
                         onChange={handleChange}
                         className="w-full text-black pt-2 pb-1 border-b-2 border-gray-300 focus:outline-none focus:ring-0 focus:border-black transition duration-200"
                         rows={4}
@@ -111,7 +116,7 @@ const FourthSection = () => {
                         type={field === "email" ? "email" : "text"}
                         id={field}
                         name={field}
-                        value={formData[field]}
+                        value={formData[field as keyof typeof formData]}
                         onChange={handleChange}
                         className="w-full text-black pt-2 pb-1 border-b-2 border-gray-200 focus:outline-none focus:ring-0 focus:border-black transition duration-200"
                         required
@@ -121,7 +126,15 @@ const FourthSection = () => {
                   </div>
                 </div>
               ))}
-              {submissionStatus && <p className="text-sm text-center">{submissionStatus}</p>}
+              {submissionStatus && (
+                <div
+                  className={`text-center py-2 text-lg font-medium ${
+                    submissionStatus.startsWith("✅") ? "text-green-600" : "text-red-600"
+                  }`}
+                >
+                  {submissionStatus}
+                </div>
+              )}
               <button
                 type="submit"
                 className="w-full py-3 bg-black text-white font-medium rounded-md shadow-md transition duration-300 ease-in-out transform hover:scale-105"
