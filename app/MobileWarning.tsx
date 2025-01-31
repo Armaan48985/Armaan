@@ -1,7 +1,6 @@
 'use client'
 import { useRouter } from "next/navigation";
-import React, {  useEffect } from "react";
-// import { useRouter } from "next/router";
+import React, { useEffect } from "react";
 
 const MobileWarning = () => {
   const router = useRouter();
@@ -12,13 +11,12 @@ const MobileWarning = () => {
         window.innerWidth <= 768 || /Mobi|Android/i.test(navigator.userAgent);
 
       if (isMobileDevice) {
-        // Only redirect after router is ready
         router.push("/not-optimized");
       }
     };
 
-    checkMobile(); // Check on initial load
-    window.addEventListener("resize", checkMobile); // Recheck on resizing
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
 
     return () => window.removeEventListener("resize", checkMobile);
   }, [router]);
