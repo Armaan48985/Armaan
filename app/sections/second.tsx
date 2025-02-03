@@ -10,7 +10,7 @@ const SecondSection: React.FC = () => {
           <SquigglyText/>
         </h1>
 
-        <p className="text-lg max-w-[35rem] opacity-80 text-center">
+        <p className="text-lg max-w-[35rem] opacity-80 text-center text-white">
   I&apos;m a Fullstack web Developer specializing in MERN stack, passionate about building scalable solutions and solving complex problems.
 </p>
 
