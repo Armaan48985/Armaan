@@ -66,13 +66,13 @@ const FourthSection = () => {
       <div className="flex-between w-full my-10">
         <div className="ml-[20rem] flex flex-col items-center space-y-4">
           {/* Profile Image */}
-          <div className="w-[15rem] h-[20rem] rounded-lg border-2 border-gray-300 p-4 overflow-hidden bg-white hover:border-gray-600 duration-500">
+          <div className="w-[15rem] h-[20rem] rounded-lg border-2 border-gray-300 p-3 overflow-hidden bg-white hover:border-gray-600 duration-500">
             <Image
-              src="/profile2.jpg"
+              src="/profile-final.jpg"
               width={250}
               height={350}
               alt="Your Name"
-              className="w-full h-full object-cover rounded-sm hover:rounded-lg rotate-180 hover:scale-[1.05] duration-500 opacity-95 hover:opacity-100"
+              className="w-full h-full object-cover rounded-md hover:rounded-lg duration-500 opacity-95 hover:opacity-100"
             />
           </div>
 
