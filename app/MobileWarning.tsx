@@ -1,30 +1,31 @@
-'use client'
+'use client';
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 
 const MobileWarning = () => {
-  const router = useRouter();
+    const router = useRouter();
 
-  useEffect(() => {
-    const checkMobile = () => {
-      const isMobileDevice =
-        window.innerWidth <= 768 || /Mobi|Android/i.test(navigator.userAgent);
+    useEffect(() => {
+        const checkMobile = () => {
+            const isMobileDevice = window.matchMedia("(max-width: 768px)").matches;
 
-      if (isMobileDevice) {
-        router.push("/not-optimized");
-      }
-    };
+            // Redirect to /not-optimized if on mobile
+            if (isMobileDevice) {
+                router.push("/not-optimized");
+            } 
+            // If user is on /not-optimized and not on mobile, redirect to /
+            else if (window.location.pathname === "/not-optimized") {
+                router.push("/");
+            }
+        };
 
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
+        checkMobile();
+        window.addEventListener("resize", checkMobile);
 
-    return () => window.removeEventListener("resize", checkMobile);
-  }, [router]);
+        return () => window.removeEventListener("resize", checkMobile);
+    }, [router]);
 
-  return(
-    <div></div>
-  )
-
+    return null;
 };
 
 export default MobileWarning;

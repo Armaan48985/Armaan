@@ -8,7 +8,7 @@ export function HeroScrollDemo() {
   return (
 <div className="flex flex-col overflow-hidden space-y-4">
     <ContainerScroll titleComponent="">
-        <Link href="https://coin-type.vercel.app/">
+        <Link href={`/work/1`}>
         <Image
           src={`/coin-type.png`}
           alt="hero"
@@ -20,7 +20,7 @@ export function HeroScrollDemo() {
         </Link>
       </ContainerScroll>
       <ContainerScroll titleComponent="">
-        <Link href='https://defiapp-armaan-raj-thakurs-projects.vercel.app/'> 
+        <Link href={`/work/2`}>
           <Image
             src={`/crypto-tracker.png`}
             alt="hero"
@@ -32,7 +32,7 @@ export function HeroScrollDemo() {
         </Link>
       </ContainerScroll>
       <ContainerScroll titleComponent="">
-        <Link href="https://eval-ai-six.vercel.app/">
+        <Link href={`/work/3`}>
         <Image
           src={`/eval-ai.png`}
           alt="hero"

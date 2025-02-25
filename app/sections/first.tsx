@@ -53,6 +53,19 @@ export default function FirstSection(){
                         <span className="absolute left-0 bottom-[10px] w-full h-[2px] bg-white scale-x-0 group-hover:scale-x-100 group-hover:translate-y-4 transition-all duration-500"></span>
                     </span>
                 </button>
+
+                <button
+                    className="bg-transparent text-white hover:scale-105 duration-700 pb-4 group opacity-75 hover:opacity-100"
+                >
+                        <a 
+                            href="/resume.pdf" 
+                            download="My_Resume.pdf" 
+                            className="relative group-hover:translate-y-1 transition-all duration-500"
+                        >
+                            Resume
+                        <span className="absolute left-0 bottom-[10px] w-full h-[2px] bg-white scale-x-0 group-hover:scale-x-100 group-hover:translate-y-4 transition-all duration-500"></span>
+                        </a>
+                </button>
             </div>
 
 
