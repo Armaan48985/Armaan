@@ -3,7 +3,6 @@ import Image from 'next/image';
 import React from 'react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
-import { BackgroundLinesDemo } from '@/app/background-demo';
 import { BackgroundLines } from '@/components/ui/backgroundlines';
 
 type Project = {
@@ -51,7 +50,7 @@ const Page = () => {
   }
 
   return (
-    <div className="flex justify-center items-center w-full min-h-screen p-6 bg-black text-white geologica">
+    <div className="flex justify-center items-center w-full min-h-screen p-6 bg-black text-white">
         <BackgroundLines className="flex items-center justify-center w-full flex-col px-4">
                {/* Left Side: Video or Image */}
               <div className='rounded-2xl grid md:grid-cols-2 gap-16 w-full max-w-6xl p-10 py-24 border-[1px] border-gray-800 z-20 bg-black bg-opacity-80'>
